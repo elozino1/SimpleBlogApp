@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/postsFragment">
+
+    <fragment
+        android:id="@+id/postsFragment"
+        android:name="com.olamachia.simpleblogapp.ui.fragments.PostsFragment"
+        android:label="fragment_posts"
+        tools:layout="@layout/fragment_posts" >
+        <action
+            android:id="@+id/action_postsFragment_to_commentsFragment"
+            app:destination="@id/commentsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentsFragment"
+        android:name="com.olamachia.simpleblogapp.ui.fragments.CommentsFragment"
+        android:label="fragment_comments"
+        tools:layout="@layout/fragment_comments" >
+        <argument
+            android:name="post"
+            app:argType="com.olamachia.simpleblogapp.models.ResponseItem" />
+    </fragment>
+</navigation>

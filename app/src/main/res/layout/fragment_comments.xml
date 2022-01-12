@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.CommentsFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_post_body"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/comments_tv_text"
+        android:id="@+id/tv_comments"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/tv_post_body"
+        app:layout_constraintTop_toBottomOf="@id/tv_post_body"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/black" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/comments_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_comments"
+        android:layout_above="@id/comments_layout"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@id/comments_layout" />
+
+    <LinearLayout
+        android:id="@+id/comments_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:weightSum="2">
+
+        <EditText
+            android:id="@+id/et_comment"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:minLines="1"
+            android:maxLines="4"
+            android:layout_marginTop="10dp"
+            android:autofillHints="comments"
+            android:hint="comment"
+            android:padding="10dp"
+            android:inputType="textMultiLine"
+            android:scrollbars="vertical"
+            android:layout_weight="1.95"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/edit_text_background"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
