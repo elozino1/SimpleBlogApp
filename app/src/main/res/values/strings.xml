@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">SimpleBlogApp</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="empty_string" />
     <string name="comments_tv_text">Comments:</string>
+    <string name="email_hint">enter post title</string>
+    <string name="post_hint">type in post</string>
+    <string name="post">Post</string>
+    <string name="comment">comment</string>
 </resources>

@@ -5,7 +5,7 @@ import android.view.*
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import android.widget.Toast
-import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.olamachia.simpleblogapp.R
 import com.olamachia.simpleblogapp.adapters.PostsAdapter
@@ -37,24 +37,38 @@ class PostsFragment : Fragment() {
         postsViewModel = (activity as MainActivity).postsViewModel
         setupRecyclerView()
         setSearchListener()
+        setFABOnClickListener()
+        observeResultsFromAllPostsFetch()
+    }
 
+    //set observer on the viewmodel livedata and pass list of post to PostsAdapter
+    private fun observeResultsFromAllPostsFetch() {
         postsViewModel.allPosts.observe(viewLifecycleOwner, { response ->
             when(response) {
                 is Resource.Success -> {
+                    binding.progressBar.visibility = View.GONE
                     response.data?.let { postsResponse ->
                         postsAdapter.differ.submitList(postsResponse)
                     }
                 }
                 is Resource.Error -> {
+                    binding.progressBar.visibility = View.GONE
                     response.message?.let { errorMessage ->
                         Toast.makeText(activity, errorMessage, Toast.LENGTH_LONG).show()
                     }
                 }
                 is Resource.Loading -> {
-                    Toast.makeText(activity, "Loading Posts", Toast.LENGTH_LONG).show()
+                    binding.progressBar.visibility = View.VISIBLE
                 }
             }
         })
+    }
+
+    private fun setFABOnClickListener() {
+        binding.fab.setOnClickListener {
+            val direction = PostsFragmentDirections.actionPostsFragmentToAddPostFragment()
+            it.findNavController().navigate(direction)
+        }
     }
 
     private fun setSearchListener() {

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_postsFragment_to_commentsFragment"
             app:destination="@id/commentsFragment" />
+        <action
+            android:id="@+id/action_postsFragment_to_addPostFragment"
+            app:destination="@id/addPostFragment" />
     </fragment>
     <fragment
         android:id="@+id/commentsFragment"
@@ -22,5 +25,14 @@
         <argument
             android:name="post"
             app:argType="com.olamachia.simpleblogapp.models.ResponseItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPostFragment"
+        android:name="com.olamachia.simpleblogapp.ui.fragments.AddPostFragment"
+        android:label="fragment_add_post"
+        tools:layout="@layout/fragment_add_post" >
+        <action
+            android:id="@+id/action_addPostFragment_to_postsFragment"
+            app:destination="@id/postsFragment" />
     </fragment>
 </navigation>

@@ -31,10 +31,17 @@
         android:id="@+id/comments_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_comments"
         android:layout_above="@id/comments_layout"
+        android:layout_below="@id/tv_comments"
         android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@id/comments_layout" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_bar"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
 
     <LinearLayout
         android:id="@+id/comments_layout"
@@ -53,7 +60,7 @@
             android:maxLines="4"
             android:layout_marginTop="10dp"
             android:autofillHints="comments"
-            android:hint="comment"
+            android:hint="@string/comment"
             android:padding="10dp"
             android:inputType="textMultiLine"
             android:scrollbars="vertical"
@@ -64,7 +71,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Post"
+            android:text="@string/post"
+            android:id="@+id/button_post"
             android:layout_marginTop="8dp"/>
 
     </LinearLayout>
