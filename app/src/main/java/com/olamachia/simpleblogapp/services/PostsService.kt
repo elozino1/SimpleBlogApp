@@ -1,6 +1,7 @@
 package com.olamachia.simpleblogapp.services
 
 import com.olamachia.simpleblogapp.models.CommentResponseItem
+import com.olamachia.simpleblogapp.models.PostsResponse
 import com.olamachia.simpleblogapp.models.ResponseItem
 import retrofit2.Response
 import retrofit2.http.Body

@@ -24,7 +24,7 @@ class CommentsAdapter: RecyclerView.Adapter<CommentsAdapter.ViewHolder>() {
         }
 
         override fun areContentsTheSame(oldItem: CommentResponseItem, newItem: CommentResponseItem): Boolean {
-            return oldItem == newItem
+            return oldItem.id == newItem.id
         }
     }
 

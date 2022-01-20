@@ -4,13 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.28055555555555556" />
+        <entry key="app/src/main/res/drawable/edit_text_background.xml" value="0.2861111111111111" />
         <entry key="app/src/main/res/drawable/ic_add_24.xml" value="0.2962962962962963" />
+        <entry key="app/src/main/res/drawable/search_view_background.xml" value="0.12129629629629629" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25391849529780564" />
         <entry key="app/src/main/res/layout/comment_list_item.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/fragment_add_post.xml" value="0.24537037037037038" />
-        <entry key="app/src/main/res/layout/fragment_comments.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/fragment_comments.xml" value="0.28618421052631576" />
         <entry key="app/src/main/res/layout/fragment_posts.xml" value="0.28125" />
         <entry key="app/src/main/res/layout/post_list_item.xml" value="0.25496688741721857" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.2953125" />
       </map>
     </option>
   </component>

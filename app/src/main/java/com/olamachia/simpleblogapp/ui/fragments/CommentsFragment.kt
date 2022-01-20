@@ -107,7 +107,9 @@ class CommentsFragment : Fragment() {
             val comment = binding.etComment
             val commentText = comment.text.toString()
             val commentContent = CommentResponseItem(commentText, EMAIL, 501, NAME, postResponseItem.id)
+            val commentList = listOf(commentContent)
             commentsViewModel.addNewComment(commentContent)
+            commentsAdapter.differ.submitList(commentList)
             comment.setText(R.string.empty_string)
         }
     }
